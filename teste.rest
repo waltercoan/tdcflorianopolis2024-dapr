@@ -1,0 +1,108 @@
+@api_inventory = localhost:8081
+@api_shoppingcart = localhost:8082
+@api_checkout = localhost:8083
+### ms_inventory POST Product
+# @name ms_inventory_post_product_1
+POST http://{{api_inventory}}/products
+Content-Type: application/json
+
+{
+    "description": "XBOX Series X",
+    "price": "4500",
+    "category": "Videogame"
+}
+
+
+### ms_inventory POST Product
+# @name ms_inventory_post_product_2
+POST http://{{api_inventory}}/products
+Content-Type: application/json
+
+{
+    "description": "Nintendo Switch",
+    "price": "2100",
+    "category": "Videogame"
+}
+###
+@id_product_1 = {{ms_inventory_post_product_1.response.body.$.id}}
+@id_product_2 = {{ms_inventory_post_product_2.response.body.$.id}}
+
+### ms_inventory GET PRODUCTS 
+GET http://{{api_inventory}}/products
+Content-Type: application/json
+
+
+### ms_inventory GET PRODUCTS 1
+GET http://{{api_inventory}}/products/{{id_product_1}}
+Content-Type: application/json
+
+### ms_inventory GET PRODUCTS 2
+GET http://{{api_inventory}}/products/{{id_product_2}}
+Content-Type: application/json
+
+
+
+
+
+
+
+
+### ms_shoppingcart POST Cart1
+# @name ms_shoppingcart_post_cart_1
+POST http://{{api_shoppingcart}}/shoppingcart
+Content-Type: application/json
+
+{
+  "date": "2024-06-13T14:01:26.353Z",
+  "itens": [
+    {
+      "qtd": 1,
+      "price": 3000,
+      "product": {
+        "id": "{{id_product_1}}"
+      }
+    },
+    {
+      "qtd": 1,
+      "price": 1500,
+      "product": {
+        "id": "{{id_product_2}}"
+      }
+    }
+  ]
+}
+
+###
+@id_cart = {{ms_shoppingcart_post_cart_1.response.body.$.id}}
+
+### ms_shoppingcart GET Cart1
+GET http://{{api_shoppingcart}}/shoppingcart/{{id_cart}}
+Content-Type: application/json
+
+### ms_shoppingcart POST CONFIRM Cart1
+POST http://{{api_shoppingcart}}/shoppingcart/confirm/{{id_cart}}
+Content-Type: application/json
+
+
+
+
+
+
+
+
+### ms_checkout GET ORDERS
+GET http://{{api_checkout}}/orders
+Content-Type: application/json
+
+
+### ms_shoppingcart GET Cart1
+GET http://{{api_shoppingcart}}/shoppingcart/{{id_cart}}
+Content-Type: application/json
+
+
+### ms_checkout GET PRODUCTS 
+GET http://{{api_checkout}}/products
+Content-Type: application/json
+
+
+

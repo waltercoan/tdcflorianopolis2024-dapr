@@ -1,0 +1,45 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-MsInventoryApplication<ms_inventory>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "br.com.waltercoan.ms_inventory.MsInventoryApplication",
+            "projectName": "ms_inventory",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env",
+            "preLaunchTask": "daprd-debug-java",
+            "postDebugTask": "daprd-down-java"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-MsShoppingCartApplication<ms_shoppingcart>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "br.com.waltercoan.ms_shoppingcart.MsShoppingCartApplication",
+            "projectName": "ms_shoppingcart",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env",
+            "preLaunchTask": "daprd-debug-java",
+            "postDebugTask": "daprd-down-java"
+        },
+        {
+            "name": "Launch Dapr",
+            "request": "launch",
+            "type": "dapr",
+            "runFile": "$(workspaceFolder)/dapr.yaml",
+            "preLaunchTask": "dapr"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-MsShoppingcartApplication<ms_shoppingcart>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "br.com.waltercoan.ms_shoppingcart.MsShoppingcartApplication",
+            "projectName": "ms_shoppingcart",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

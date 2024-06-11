@@ -1,0 +1,16 @@
+version: 1
+common:
+  resourcesPath: ./components/
+apps:
+  - appID: ms_inventory
+    appDirPath: ./ms_inventory/target/
+    appPort: 8081
+    command: ["java", "-jar", "ms_inventory-0.0.1-SNAPSHOT.jar"]
+  - appID: ms_shoppingcart
+    appDirPath: ./ms_shoppingcart/target/
+    appPort: 8082
+    command: ["java", "-jar", "ms_shoppingcart-0.0.1-SNAPSHOT.jar"]
+  - appID: ms_checkout
+    appDirPath: ./ms_checkout/target/
+    appPort: 8083
+    command: ["java", "-jar", "ms_checkout-0.0.1-SNAPSHOT.jar"]
