@@ -28,3 +28,12 @@ dapr run  -f .
 - [ms_inventory Swagger](http://localhost:8081/swagger-ui/index.html)
 - [ms_shoppingcart Swagger](http://localhost:8082/swagger-ui/index.html)
 - [ms_checkout Swagger](http://localhost:8083/swagger-ui/index.html)
+
+
+### Grade da apresentação do evento
+- [The Developers Conference 2024 Florianópolis - Trilha Microservices](https://thedevconf.com/tdc/2024/florianopolis/trilha-microservices)
+
+### Fotos
+![Foto 1](fotos/foto01.jpg "Foto 1")
+![Foto 2](fotos/foto02.jpg "Foto 2")
+![Foto 3](fotos/foto03.jpg "Foto 3")
