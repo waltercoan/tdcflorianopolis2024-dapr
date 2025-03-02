@@ -15,6 +15,9 @@
 ### Slides
 - [Download](slides/20240613-TDCFlorianopolis2024-Dapr_v2.pdf)
 
+### Youtube
+[![Youtube](https://img.youtube.com/vi/w1mXDzMYtto/0.jpg)](https://www.youtube.com/watch?v=w1mXDzMYtto)
+
 ### Executar o projeto
 ```
 mvn clean install -DskipTests
